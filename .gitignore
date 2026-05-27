@@ -1,0 +1,42 @@
+# ─── Python ───────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Entorno virtual
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+
+# Variables de entorno (contienen contraseñas)
+backend/.env
+
+# Alembic
+backend/alembic/versions/*.pyc
+
+# Logs uvicorn
+backend/uvicorn_out.txt
+backend/uvicorn_err.txt
+
+# ─── Node / Frontend ──────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/vite_out.txt
+frontend/vite_err.txt
+
+# ─── IDEs / OS ────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

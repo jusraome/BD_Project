@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Invoke-RestMethod -Uri \"http://localhost:8000/health\")",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"c:\\\\BD_Proyect\\\\BD_Proyect\\\\backend\\\\.env\"\\); $encoding = [System.Text.Encoding]::GetEncoding\\(\"latin1\"\\); $content = $encoding.GetString\\($bytes\\); Write-Output $content)",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\(\"c:\\\\BD_Proyect\\\\BD_Proyect\\\\backend\\\\.env\"\\); Write-Output \"Total bytes: $\\($bytes.Length\\)\"; Write-Output \"Byte at 85: 0x$\\($bytes[85].ToString\\('X2'\\)\\) = $\\($bytes[85]\\)\"; $context = $bytes[80..90] | ForEach-Object { \"0x$\\($_.ToString\\('X2'\\)\\)\" }; Write-Output \"Context [80-90]: $context\")",
+      "PowerShell(& \"C:\\\\Program Files\\\\PostgreSQL\\\\17\\\\bin\\\\psql.exe\" -U postgres -c \"SHOW server_encoding; SHOW client_encoding; SHOW lc_messages;\" academia_db 2>&1)",
+      "PowerShell(Get-Command psql -ErrorAction SilentlyContinue)",
+      "PowerShell($env:PGPASSWORD = \"Admin123\"; & \"C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\\\\psql.exe\" -U postgres -d academia_db -c \"SHOW server_encoding; SHOW client_encoding; SHOW lc_messages;\" 2>&1)",
+      "PowerShell(Test-Path \"$env:APPDATA\\\\postgresql\\\\pgpass.conf\"; Test-Path \"$env:USERPROFILE\\\\.pgpass\"; Get-Content \"$env:APPDATA\\\\postgresql\\\\pgpass.conf\" -ErrorAction SilentlyContinue | Select-Object -First 5)",
+      "PowerShell($env:PGPASSWORD = \"Admin123\"; & \"C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\\\\psql.exe\" -U postgres -c \"SHOW data_directory;\" 2>&1)"
+    ]
+  }
+}
